@@ -18,7 +18,6 @@ const movieData = async () => {
     } else {
         movieDetails(data)
         document.getElementById("main").style.display = "block";
-        console.log(data)
     }
 }
 
@@ -27,6 +26,8 @@ const movieDetails = (data) => {
         data.Runtime = "Not Available"
     }else if (data.Rated == "N/A") {
         data.Rated = "Not Available"
+    }else if (data.Type == "series") {
+        document.getElementById("seasons").innerText = `Total Seasons: ${data.totalSeasons}`
     }
     document.getElementById("img-fluid").src = data.Poster
     movieTitle.innerText = data.Title
