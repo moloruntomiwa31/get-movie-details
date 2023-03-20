@@ -15,8 +15,7 @@ const movieData = async () => {
         return
     }
     movieDetails(data)
-    document.getElementById("main").style.display = "block"
-    console.log(data)
+    document.getElementById("main").style.display = "block";
 }
 
 const movieDetails = (data) => {
