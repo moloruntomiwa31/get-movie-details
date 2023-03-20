@@ -10,13 +10,16 @@ const movieTitle = document.getElementById("title");
 const movieData = async () => {
     const response = await fetch (`${details.baseUrl}apikey=${details.apiKey}&t=${searchBar.value}`);
     const data = await response.json();
+
     if (data.Response == "False") {
         document.getElementById("error").innerText = data.Error
+        document.getElementById("main").style.display = "none"
         return
+    } else {
+        movieDetails(data)
+        document.getElementById("main").style.display = "block";
+        console.log(data)
     }
-    movieDetails(data)
-    document.getElementById("main").style.display = "block";
-    // console.log(data)
 }
 
 const movieDetails = (data) => {
@@ -36,6 +39,7 @@ const movieDetails = (data) => {
     document.getElementById("runtime").innerText = `Runtime: ${data.Runtime}`
     document.getElementById("main-characters").innerText = `Actors: ${data.Actors}`
     document.getElementById("awards").innerText = `Awards: ${data.Awards}`
+    document.getElementById("type").innerText = `Type: ${data.Type}`
 }
 
 const display = () => {

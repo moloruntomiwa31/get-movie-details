@@ -72,6 +72,7 @@ p {font-size: 1.2rem; padding-top: 5px; font-family: 'Montserrat', sans-serif;}
     text-align: center;
     margin-bottom: 10px;
 }
+#type {text-transform: capitalize;}
 .summary {
     text-align: left;
     width: 100%;
@@ -89,7 +90,7 @@ footer {
 }
 @media screen and (min-width: 768px) {
     .container {
-        height: 150vh;
+        height: 70vh;
     }
     .search-tab .btn {
         width: 12%;
@@ -112,7 +113,7 @@ footer {
 }
 @media screen and (min-width: 768px) and (max-width: 920px) {
     .container {
-        height: 90vh;
+        height: 70vh;
     }
     #main {
         margin-top: 10%;
