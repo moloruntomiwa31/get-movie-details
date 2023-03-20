@@ -22,11 +22,12 @@ const movieData = async () => {
 }
 
 const movieDetails = (data) => {
-    if (data.Runtime == "N/A") {
-        data.Runtime = "Not Available"
-    }else if (data.Rated == "N/A") {
-        data.Rated = "Not Available"
-    }else if (data.Type == "series") {
+    for (key in data) {
+        if (data[key] == "N/A") {
+            data[key] = 'Not Available'
+        }
+    }
+     if (data.Type == "series") {
         document.getElementById("seasons").innerText = `Total Seasons: ${data.totalSeasons}`
     }
     document.getElementById("img-fluid").src = data.Poster
