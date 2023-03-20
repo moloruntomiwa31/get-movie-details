@@ -20,8 +20,22 @@ const movieData = async () => {
 }
 
 const movieDetails = (data) => {
+    if (data.Runtime == "N/A") {
+        data.Runtime = "Not Available"
+    }else if (data.Rated == "N/A") {
+        data.Rated = "Not Available"
+    }
     document.getElementById("img-fluid").src = data.Poster
     movieTitle.innerText = data.Title
+    document.getElementById("released").innerText = `Realsed: ${data.Released}`
+    document.getElementById("pg").innerText = `Rated: ${data.Rated}`
+    document.getElementById("genre").innerText = `Genre: ${data.Genre}`
+    document.getElementById("language").innerText = `Language: ${data.Language}`
+    document.getElementById("description").innerText = `Synopsis: ${data.Plot}`
+    document.getElementById("director").innerText = `Director: ${data.Director}`
+    document.getElementById("runtime").innerText = `Runtime: ${data.Runtime}`
+    document.getElementById("main-characters").innerText = `Actors: ${data.Actors}`
+    document.getElementById("awards").innerText = `Awards: ${data.Awards}`
 }
 
 const display = () => {
@@ -29,6 +43,7 @@ const display = () => {
         document.getElementById("error").innerText = 'Cannot be left blank.'
     }
     else {
+        document.getElementById("error").style.display = "none"
         movieData();
         searchBar.value = '';
     }

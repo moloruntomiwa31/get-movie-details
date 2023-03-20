@@ -4,18 +4,21 @@
     box-sizing: border-box;
     font-family: Poppins;
     font-size: 1.1rem;
+    color: #fff;
 }
+body {background-color: #18122b;}
+h1 {font-size: 1.3rem; font-weight: bolder;}
+p {font-size: 1.2rem; padding-top: 5px;}
 .container {
     width: 100%;
-    height: 100vh;
+    min-height: 150vh;
     background-color:  #18122b;
 }
 .wrapper {
     width: 90%;
-    height: 100vh;
+    height: 100%;
     padding-top: 10px;
     margin: auto;
-    /* background-color: aqua; */
 }
 .greeting, .search-tab input::placeholder, .intro, #title {color: #fff;}
 .search-tab {
@@ -40,10 +43,16 @@
     border: none;
     cursor: pointer;
 }
+.search-tab .btn:hover {
+    background-color: #393053;
+}
 #error {
     display: block;
     color: red;
     font-style: italic;
+}
+#main {
+    margin-top: 50px;
 }
 .image {
     width: 100%;
@@ -51,7 +60,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     height:auto;
 }
 #img-fluid {
@@ -60,13 +69,33 @@
 }
 #title {
     padding-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.summary {
+    text-align: left;
+    width: 100%;
+    margin-top: 10px;
+}
+footer {
+    width: 80%;
+    height: fit-content;
+    margin: 10px auto 0 auto;
+    background-color: #18122b;
+    text-align: right; 
+    color: #fff; 
+    font-size: 1.1rem;
+    border-top: 2px solid #fff;
 }
 @media screen and (min-width: 768px) {
+    .container {
+        height: 150vh;
+    }
     .search-tab .btn {
         width: 12%;
     }
     .image {
-        justify-content: space-around;
+        justify-content: space-between;
         flex-direction: row-reverse;
     }
     #img-fluid {
@@ -74,5 +103,18 @@
     }
     #title {
         padding-top: 0;
+    }
+    .summary {
+        text-align: left;
+        width: 50%;
+    }
+    p {padding-top: 10px;}
+}
+@media screen and (min-width: 768px) and (max-width: 920px) {
+    .container {
+        height: 90vh;
+    }
+    #main {
+        margin-top: 10%;
     }
 }
