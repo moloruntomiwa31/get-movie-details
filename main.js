@@ -1,6 +1,6 @@
 const details = {
     apiKey : '9b8d44a4',
-    baseUrl : 'http://www.omdbapi.com/?'
+    baseUrl : 'https://www.omdbapi.com/?'
 }
 const searchBtn = document.getElementById("search");
 const searchBar = document.getElementById("search-bar");
@@ -16,6 +16,7 @@ const movieData = async () => {
     }
     movieDetails(data)
     document.getElementById("main").style.display = "block";
+    // console.log(data)
 }
 
 const movieDetails = (data) => {
