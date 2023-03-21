@@ -7,8 +7,8 @@
     color: #fff;
 }
 body {background-color: #18122b;}
-h1 {font-size: 1.3rem; font-weight: bolder; font-family: "Poppins", sans-serif;}
-p {font-size: 1.2rem; padding-top: 5px; font-family: 'Montserrat', sans-serif;}
+h1 {font-size: 1.5rem; font-weight: bolder; font-family: "Poppins", sans-serif;}
+p {padding-top: 5px; font-family: 'Montserrat', sans-serif;}
 .container {
     width: 100%;
     min-height: 150vh;
@@ -109,7 +109,7 @@ footer {
         text-align: left;
         width: 50%;
     }
-    p {padding-top: 10px;}
+    p {padding-top: 10px; font-size: 1.3rem;}
 }
 @media screen and (min-width: 768px) and (max-width: 920px) {
     .container {

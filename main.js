@@ -12,13 +12,12 @@ const movieData = async () => {
     const data = await response.json();
 
     if (data.Response == "False") {
-        document.getElementById("error").innerText = data.Error
+        document.getElementById("error").innerText = 'Movie not Found.'
         document.getElementById("main").style.display = "none"
         return
-    } else {
-        movieDetails(data)
-        document.getElementById("main").style.display = "block";
-    }
+    }   
+    movieDetails(data)
+    document.getElementById("main").style.display = "block";
 }
 
 const movieDetails = (data) => {
@@ -27,8 +26,9 @@ const movieDetails = (data) => {
             data[key] = 'Not Available'
         }
     }
-     if (data.Type == "series") {
+    if (data.Type == "series") {
         document.getElementById("seasons").innerText = `Total Seasons: ${data.totalSeasons}`
+        document.getElementById("year").innerText = `Year: ${data.Year}`
     }
     document.getElementById("img-fluid").src = data.Poster
     movieTitle.innerText = data.Title
