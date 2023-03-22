@@ -10,7 +10,6 @@ const movieTitle = document.getElementById("title");
 const movieData = async () => {
     const response = await fetch (`${details.baseUrl}apikey=${details.apiKey}&t=${searchBar.value}`);
     const data = await response.json();
-
     if (data.Response == "False") {
         document.getElementById("error").innerText = 'Movie not Found.'
         document.getElementById("main").style.display = "none"
@@ -42,6 +41,7 @@ const movieDetails = (data) => {
     document.getElementById("main-characters").innerText = `Actors: ${data.Actors}`
     document.getElementById("awards").innerText = `Awards: ${data.Awards}`
     document.getElementById("type").innerText = `Type: ${data.Type}`
+    document.getElementById("ratings").innerText = `Rating: ${data.Ratings[0].Value}`
 }
 
 const display = () => {
